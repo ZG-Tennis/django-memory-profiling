@@ -23,7 +23,7 @@ setup(
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='0.0.1',
+    version='0.0.2',
 
     description='Provides middlewares for tranking memory usage',
     long_description=long_description,
@@ -78,6 +78,7 @@ setup(
         'django>=1.8,<1.9',
         'argparse>=1.2.1',
         'wsgiref>=0.1.2',
+        'Pympler>=0.4.2',
     ],
 
     # # List additional groups of dependencies here (e.g. development
