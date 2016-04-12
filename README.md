@@ -10,13 +10,13 @@ Works with Debug = True or False (If True results can be shown on loggin panel o
 `pip install git+git://github.com/giussepi/django-memory-profiling`
 
 2. On settings.py
-  * Add your preffered middleware(s) to MIDDLEWARE_CLASSES
+  1. Add your preffered middleware(s) to MIDDLEWARE_CLASSES
   ```
       'memory_profiling.pympler_middleware.MemoryMiddleware2',
       'memory_profiling.pympler_middleware.MemoryMiddleware1',
   ```
-  * Add `memory_profiling` to INSTALLED_APPS
-  * Configurate as desired. Example:
+  2. Add `memory_profiling` to INSTALLED_APPS
+  3. Configurate as desired. Example:
   ```
   SHOW_REQUEST_SUMMARY = True
   SHOW_RESPONSE_SUMMARY = True
