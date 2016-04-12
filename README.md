@@ -2,7 +2,12 @@
 
 Measure memory taken by requested view and response using pympler.muppy
 
-Works with Debug = True or False (If True results can be shown on loggin panel of django debug toolbar)
+Memory measurements can be shown on:
+* **_Terminal_**, when running django development server
+* **_Loggin panel of django debug toolbar_** (if `SHOW_ON_DJANGO_DEBUG_TOOLBAR_LOGGIN_PANEL = True`)
+
+Works with Debug = True or False
+
 
 ### INSTALLATION
 
