@@ -6,7 +6,7 @@ Memory measurements can be shown on:
 * **_Terminal_**, when running django development server
 * **_Loggin panel of django debug toolbar_** (if `SHOW_ON_DJANGO_DEBUG_TOOLBAR_LOGGIN_PANEL = True`)
 
-Works with Debug = True or False
+Works with `Debug = True or False`
 
 
 ### INSTALLATION
