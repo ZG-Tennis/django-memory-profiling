@@ -3,7 +3,6 @@
 
 import logging
 
-# from django.conf import settings
 from django.template.defaultfilters import filesizeformat
 from pympler import muppy
 from pympler import summary
@@ -11,29 +10,27 @@ from pympler.asizeof import asizeof
 # from pympler import refbrowser
 # from pympler import asizeof
 
-from memory_profiling.settings import IGNORE_URLS_CONTAINING, SHOW, \
+from memory_profiling.mixins.middleware import BaseMemoryMiddlewareMixin
+from memory_profiling.settings import SHOW, \
     SHOW_ON_DJANGO_DEBUG_TOOLBAR_LOGGIN_PANEL, SHOW_TOP_X_MEMORY_DELTAS
+# from memory_profilinf.utils import output_function
 
 
 logger = logging.getLogger(__name__)
 
 
-def output_function(o):
-    return str(type(o))
+class BaseMemoryMiddleware(BaseMemoryMiddlewareMixin):
+    """
+    Defines the process_request_actions method for all the middlewares using
+    muppy
+    """
 
-
-class BaseMemoryMiddleware(object):
-    """  """
-    def is_ignored(self, path):
-        """ Verifies if the path provided should be ignored """
-        for term in IGNORE_URLS_CONTAINING:
-            if path.find(term) != -1:
-                return True
-        return False
-
-    def process_request(self, request):
-        if not self.is_ignored(request.META['PATH_INFO']):
-            self.start_objects = muppy.get_objects()
+    def process_request_actions(self, request):
+        """
+        Defines the custom flow to be run on process_request method only
+        if the requested path is not ignored.
+        """
+        self.start_objects = muppy.get_objects()
 
 
 class MemoryMiddleware1(BaseMemoryMiddleware):

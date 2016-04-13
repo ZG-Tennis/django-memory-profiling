@@ -1,0 +1,18 @@
+
+{% block subject %}{{ subject }}{% endblock %}
+
+{% block plain %}
+  Hi there,
+
+  The memory threshold of {{ threshold }} has been surpassed.
+
+  Details: {{ details }}
+{% endblock %}
+
+{% block html %}
+  <p>Hi there,</p>
+
+  <p>The memory threshold of {{ threshold }} has been surpassed.</p>
+
+  <p>Details: {{ details }}</p>
+{% endblock %}
