@@ -1,6 +1,6 @@
 # django-memory-profiling
 
-Measure memory taken by requested view and response using pympler.muppy
+Measure memory taken by requested view and response using _pympler.muppy_ and/or psutil
 
 Memory measurements can be:
 * **_Displayed on Terminal_**, when running django development server
